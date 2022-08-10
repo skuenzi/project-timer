@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import {RiDeleteBin6Line} from 'react-icons/ri'
+
 export default function Timer(props) {
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(false);
@@ -24,6 +26,7 @@ export default function Timer(props) {
     <>
       <div className="timer-container">
         <h2 className="timer-name">{props.projectName}</h2>
+        <RiDeleteBin6Line className="delete-btn" onClick={() => props.handleDelete(props.id)}/>
         <div className="timer-time">{`${hours}:${minutes}:${seconds}`}</div>
         <button type="button" className="timer-start btn" onClick={() => {setRunning(true)}}>
           Start

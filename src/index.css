@@ -60,6 +60,11 @@ body {
   color: var(--pink)
 }
 
+.delete-btn {
+  grid-area: timer;
+  place-self: start end;
+}
+
 .timer-start {
   grid-area: start;
 }

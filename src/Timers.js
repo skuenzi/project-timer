@@ -12,7 +12,7 @@ export default function Timers(second) {
   const [newTimerData, setNewTimerData] = useState({
     id: nanoid(),
     projectName: "",
-    time: ''
+    time: 0
   });
 
   // update newTimerDate with each keystroke
@@ -38,11 +38,17 @@ export default function Timers(second) {
     setNewTimerData({
       id: nanoid(),
       projectName: "",
-      timer: ''
+      time: 0
     });
 
     setShowAddTimerForm(false)
   };
+
+  const handleDelete = (id) => {
+    let updatedTimers = timers.filter(timer => timer.id !== id )
+    console.log(updatedTimers)
+    setTimers(updatedTimers)
+  }
 
   useEffect(() => {
     localStorage.setItem('timers', JSON.stringify(timers))
@@ -52,7 +58,7 @@ export default function Timers(second) {
   return (
     <main>
       {timers.map((timer) => (
-        <Timer key={timer.id} projectName={timer.projectName} time={timer.time}/>
+        <Timer key={timer.id} handleDelete={handleDelete} {...timer}/>
       ))}
       <AddTimerForm
         handleChange={handleChange}
