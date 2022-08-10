@@ -12,6 +12,7 @@ export default function Timers(second) {
   const [newTimerData, setNewTimerData] = useState({
     id: nanoid(),
     projectName: "",
+    time: ''
   });
 
   // update newTimerDate with each keystroke
@@ -37,6 +38,7 @@ export default function Timers(second) {
     setNewTimerData({
       id: nanoid(),
       projectName: "",
+      timer: ''
     });
 
     setShowAddTimerForm(false)
@@ -50,7 +52,7 @@ export default function Timers(second) {
   return (
     <main>
       {timers.map((timer) => (
-        <Timer key={timer.id} projectName={timer.projectName} />
+        <Timer key={timer.id} projectName={timer.projectName} time={timer.time}/>
       ))}
       <AddTimerForm
         handleChange={handleChange}
