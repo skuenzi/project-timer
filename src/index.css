@@ -6,9 +6,11 @@
 
 :root {
   --bg-color: #252525;
+  --light-bg: rgb(56, 56, 56);
   --purple: #6930C3;
   --teal: #64DFDF;
   --mint: #80FFDB;
+  --pink: #F637EC;
 }
 
 body {
@@ -55,6 +57,7 @@ body {
   place-self: center;
   grid-area: timer;
   font-size: 2rem;
+  color: var(--pink)
 }
 
 .timer-start {
@@ -66,4 +69,56 @@ body {
 .timer-reset {
   grid-area: reset;
 }
+
+.add-timer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.add-timer-btn {
+  margin-top: 1rem;
+  padding: .15rem;
+  font-size: 6rem;
+  border-radius: 50%;
+  border: 3px var(--bg-color) solid;
+  color: var(--pink);
+}
+
+.add-timer-btn:hover,
+.add-timer-btn:focus,
+.add-timer-btn:active {
+  border: 3px var(--pink) solid;
+}
+
+.add-timer-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-input {
+  margin: 1rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--light-bg);
+  color: var(--teal);
+}
+
+.name-input:focus,
+.name-input:active,
+.name-input:hover {
+  outline: medium ridge var(--pink);
+}
+
+.submit {
+  padding: .75rem 1.5rem;
+  width: auto;
+}
+
 

@@ -1,5 +1,4 @@
 export default function Timer(second) {
-// testing git commands
     
     return (
         <>
